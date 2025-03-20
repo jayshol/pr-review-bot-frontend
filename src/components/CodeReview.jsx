@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CodeReview.css';
+import { v4 as uuidv4 } from "uuid";
+import { formatted } from '../utils/utils';
 
 const CodeReview = () => {
   const [code, setCode] = useState(''); // State for the pasted code
@@ -12,10 +14,10 @@ const CodeReview = () => {
     setLoading(true); // Set loading to true
     setReview(''); // Clear previous review
     try {
-      const response = await axios.post('http://localhost:5001/api/review', {
+      const response = await axios.post('http://localhost:5001/api', {
         code: code, // Send the pasted code to the backend
       });
-
+      console.log(response.data.review);
       setReview(response.data.review); // Update review with response from backend
     } catch (error) {
       console.error(error);
@@ -29,6 +31,26 @@ const CodeReview = () => {
     setReview('');
   }
 
+  const handleSaveReview = async () => {
+    const prId = uuidv4(); // Auto-generate PR ID
+    // const finalFileName = fileName || `file-${Date.now()}.js`; // Default filename
+    const finalFileName = `file-${Date.now()}.js`;
+    try {
+      const response = await axios.post("http://localhost:5001/api/savereview", {
+        prId,
+        fileName: finalFileName,
+        fileContent: code,
+        reviewComments: review, // Convert comments into an array
+      });
+
+      alert("Review saved successfully!");
+      console.log("Saved Review:", response.data);
+    } catch (error) {
+      console.error("Error saving review:", error);
+      alert("Failed to save review.");
+    }
+  };
+/*
   const formatted = (review) => {
     if(review !== ''){
       const points = review.split('\n').filter(line => line.trim() !== '');
@@ -62,7 +84,7 @@ const CodeReview = () => {
       )); 
     }
   }
-
+*/
   return (
     <div className='ReviewForm'>
       <h1>Code Review Bot</h1>
@@ -83,11 +105,12 @@ const CodeReview = () => {
           {loading ? 'Reviewing...' : 'Review'}
         </button>
         <button onClick={handleClear}>Clear</button>
-      </div> 
+      </div>
       {/* Div to display the review comments */}
       <div className='commentsBlock'>
         {formatted(review) || 'Your code is being reviewed. The review comments will be loaded shortly.'}
       </div>
+      <button onClick={handleSaveReview}>SaveReview</button> 
     </div>
   );
 };

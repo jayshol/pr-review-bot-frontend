@@ -1,0 +1,34 @@
+
+.prContainer{
+    width: 80%;
+    height: 80%;
+    padding: 1.5rem;
+    overflow: auto;
+    margin: auto;
+}
+.detailsContainer{
+    margin: auto;
+}
+
+.prHeader{
+    text-align: center;
+}
+
+.codeDiv{
+    border: 1px solid grey;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: gainsboro;
+    max-height: 15rem;
+    min-height: 10rem;
+    overflow: auto;
+}
+
+.reviewBlock {
+    border: 1px solid grey;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: rgb(248, 246, 246);
+    max-height: 15rem;
+    overflow: auto;
+}
