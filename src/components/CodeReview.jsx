@@ -105,12 +105,12 @@ const CodeReview = () => {
           {loading ? 'Reviewing...' : 'Review'}
         </button>
         <button onClick={handleClear}>Clear</button>
+        <button onClick={handleSaveReview}>SaveReview</button> 
       </div>
       {/* Div to display the review comments */}
       <div className='commentsBlock'>
-        {formatted(review) || 'Your code is being reviewed. The review comments will be loaded shortly.'}
+        {formatted(review) || <p>The review comments will be loaded here.</p>}
       </div>
-      <button onClick={handleSaveReview}>SaveReview</button> 
     </div>
   );
 };

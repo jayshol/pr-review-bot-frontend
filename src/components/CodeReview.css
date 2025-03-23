@@ -24,9 +24,14 @@
     overflow: auto;
 }
 
+.commentsBlock >p{
+    font-size: medium;
+    font-family:'Courier New', Courier, monospace;
+}
+
 button {
     margin: 1rem;
-    width: 5rem;
+    width: 5.5rem;
     height: 1.5rem;
     font-weight: 500;
     display: inline-block;

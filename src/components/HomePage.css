@@ -1,0 +1,75 @@
+/* General styling for homepage */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .homepage-container {
+    text-align: center;
+  }
+  
+  .homepage-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .homepage-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .homepage-header p {
+    font-size: 1.2rem;
+  }
+  
+  .homepage-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .homepage-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .homepage-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .homepage-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .homepage-section ul li {
+    padding: 5px 0;
+  }
+  
+  .homepage-section ul li::before {
+    content: "✔";
+    color: #4CAF50;
+    margin-right: 10px;
+  }
+  
+  .homepage-footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 30px;
+  }
+  
