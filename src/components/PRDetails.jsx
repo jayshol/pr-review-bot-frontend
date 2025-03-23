@@ -11,7 +11,7 @@ export default function PRDetails() {
   useEffect(() => {
     const fetchPR = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/api/review/${prId}/${fileName}`);
+        const response = await axios.get(`https://pr-review-bot-backend-production.up.railway.app/api/review/${prId}/${fileName}`);
         setPr(response.data);
       } catch (error) {
         console.error("Error fetching PR details:", error);

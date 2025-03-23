@@ -14,7 +14,7 @@ const CodeReview = () => {
     setLoading(true); // Set loading to true
     setReview(''); // Clear previous review
     try {
-      const response = await axios.post('http://localhost:5001/api', {
+      const response = await axios.post('https://pr-review-bot-backend-production.up.railway.app/api', {
         code: code, // Send the pasted code to the backend
       });
       console.log(response.data.review);
@@ -36,7 +36,7 @@ const CodeReview = () => {
     // const finalFileName = fileName || `file-${Date.now()}.js`; // Default filename
     const finalFileName = `file-${Date.now()}.js`;
     try {
-      const response = await axios.post("http://localhost:5001/api/savereview", {
+      const response = await axios.post("https://pr-review-bot-backend-production.up.railway.app/api/savereview", {
         prId,
         fileName: finalFileName,
         fileContent: code,

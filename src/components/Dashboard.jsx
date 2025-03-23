@@ -11,7 +11,7 @@ export default function PRDashboard() {
   
     const fetchPRs = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/prs", { timeout: 10000 });
+        const response = await axios.get("https://pr-review-bot-backend-production.up.railway.app/api/prs", { timeout: 10000 });
         if (isMounted) setPrs(response.data); // Update state only if mounted
       } catch (error) {
         console.error("Error fetching PRs:", error);
