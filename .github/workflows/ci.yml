@@ -32,4 +32,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}  --project ${{ secrets.VERCEL_PROJECT_ID }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Add your Vercel token as a GitHub secret
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} # Organization ID (optional)
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} # Project ID (optional)
+        run: npx vercel --prod --token $VERCEL_TOKEN
