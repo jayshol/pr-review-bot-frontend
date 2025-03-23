@@ -17,9 +17,6 @@ const App = () => (
           <Link to="/dashboard" className='navLink'>Dashboard</Link>
         </li>
         <li className='navItem'>
-          <Link to="/prDetails/:prId/:fileName" className='navLink'>PRDetails</Link>
-        </li>
-        <li className='navItem'>
           <Link to="/codereview" className='navLink'>CodeReview</Link>
         </li>
       </ul>
